@@ -112,6 +112,7 @@ if __FILE__==$0
 
       pbar = ProgressBar.new("Fetching", links.length)
       links.each do |link|
+        # puts "Checking '%s'" % link.to_s
         begin
           page = open(link.attributes['href'], "User-Agent" => USER_AGENT) { |p| Hpricot(p) }
           
